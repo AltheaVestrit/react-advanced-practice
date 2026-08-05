@@ -21,8 +21,10 @@ function reducer(state, action) {
     }
 }
 
-const state = {count: 4}
-console.log(reducer(state, {type: "set_count", value: 2.5}));
-console.log(reducer(state, {type: "decremented_count"}));
+// Try it out below:
+
+// const state = {count: 4}
+// console.log(reducer(state, {type: "set_count", value: 2.5}));
+// console.log(reducer(state, {type: "decremented_count"}));
 
 export default reducer;
