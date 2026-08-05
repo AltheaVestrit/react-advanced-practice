@@ -6,20 +6,36 @@ function App() {
   const [username, setUsername] = useState("");
 
   return (
-    <Form
-      onSubmit={(event) => {
-        onSubmit(username);
-        event.preventDefault();
-      }}
-    >
-      <InputField value={username} onChange={setUsername}>
-        Your name:
-      </InputField>
-
-      <Button color="violet" type="submit">
-        Send
-      </Button>
-    </Form>
+    <div>
+      <Form
+        onSubmit={(event) => {
+          onSubmit(username);
+          event.preventDefault();
+        }}
+      >
+        <InputField value={username} onChange={setUsername}>
+          Your name:
+        </InputField>
+        <Button color="violet" type="submit">
+          Send
+        </Button>
+      </Form>
+      <SplitPane
+        left={
+          <div>
+            <ul>
+              <li>
+                <a href="#">Link 1</a>
+              </li>
+              <li>
+                <a href="#">Link 2</a>
+              </li>
+            </ul>
+          </div>
+        }
+        right={<p>Copyright 2026</p>}
+      />
+    </div>
   );
 }
 
@@ -43,5 +59,14 @@ const InputField = ({ value, onChange, children }) => (
     />
   </label>
 );
+
+const SplitPane = ({ left, right }) => {
+  return (
+    <div className="split-pane">
+      <div className="left-pane">{left}</div>
+      <div className="right-pane">{right}</div>
+    </div>
+  );
+};
 
 export default App;
